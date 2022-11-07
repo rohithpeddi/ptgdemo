@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -48,6 +48,11 @@ const StepCard = ({step}) => {
         setOpen(!open);
     };
 
+    // useEffect(() => {
+    //     console.log("new step")
+    //     console.log(step)
+    // },[step])
+    // console.log(step.SubSteps)
 
     return (
         <div className="step">

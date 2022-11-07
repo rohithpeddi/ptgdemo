@@ -60,11 +60,11 @@ const App = () => {
         // console.log(server_message)
 
         if (message_type === UPDATE_RECIPE){
-            // console.log(server_message?.Details?.Recipe)
+            // console.log(server_message?.Details?.RecipeState)
             setRecipe(server_message?.Details?.Recipe)
-            setRecipeState(JSON.parse(server_message?.Details?.RecipeState))
+            setRecipeState(server_message?.Details?.RecipeState)
         } else if (message_type === UPDATE_STATUS){
-            console.log(JSON.parse(server_message?.Details?.RecipeState))
+            // console.log(JSON.parse(server_message?.Details?.RecipeState))
             setRecipeState(JSON.parse(server_message?.Details?.RecipeState))
             if (server_message?.Details?.Recipe !== recipe){
                 setRecipe(server_message?.Details?.Recipe)
