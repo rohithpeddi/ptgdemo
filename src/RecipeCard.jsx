@@ -7,12 +7,14 @@ import { useNavigate } from "react-router-dom";
 
 
 const RecipeCard = ({recipe}) => {
+
     const navigate = useNavigate();
 
     const handleCardClick = () => {
         // console.log("onclick btn")
         navigate(recipe.Id);
     }
+
     return (
         <div className="recipe">
             <Card sx={{ maxWidth: 345 }} onClick={handleCardClick}>

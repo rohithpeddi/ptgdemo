@@ -53,7 +53,7 @@ const recipeDetailList = [
                 "Title": "Step 2"
             }
         ],
-        "Title": "pinwheels"
+        "Title": "pinwheels.txt"
     },
     {
         "Steps": [
