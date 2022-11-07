@@ -10,7 +10,7 @@ const ErrorCard = ({error}) => {
 
     return (
         <div className="error">
-            <Card sx={{ maxWidth: 345 }}>
+            <Card sx={{ width: '100%', bgcolor: 'background.paper' }}>
                 <CardActionArea>
                     <CardContent>
                         <Typography variant="body2" color="text.secondary">

@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -43,22 +43,16 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 const StepCard = ({step}) => {
 
     const [open, setOpen] = useState(true);
-   // const [subSteps, setSubSteps] = useState(step.SubSteps);
 
     const handleClick = () => {
         setOpen(!open);
     };
 
-    // useEffect(() => {
-    //     // console.log("new step")
-    //     // console.log(step)
-    // },[step])
-    // // console.log(step.SubSteps)
 
     return (
         <div className="step">
             <List
-                sx={{ width: '100%', bgcolor: 'background.paper' }}
+                sx={{ width: '100%', bgcolor: 'background.paper', alignItems: 'center', justifyContent: 'center' }}
                 component="nav"
                 aria-labelledby="nested-list-subheader"
             >
@@ -73,8 +67,8 @@ const StepCard = ({step}) => {
                                 <TableHead>
                                     <TableRow>
                                         <StyledTableCell>Sub step</StyledTableCell>
+                                        <StyledTableCell align="right">Not Done</StyledTableCell>
                                         <StyledTableCell align="right">Done</StyledTableCell>
-                                        <StyledTableCell align="right">Not Sure</StyledTableCell>
                                         <StyledTableCell align="right">Error</StyledTableCell>
                                     </TableRow>
                                 </TableHead>
@@ -85,13 +79,13 @@ const StepCard = ({step}) => {
                                                 {subStep.Title}
                                             </StyledTableCell>
                                             <StyledTableCell align="right">
-                                                {subStep.Done === 0 ? <DoneIcon color="grey" disabled/> : <DoneIcon color="green"/>}
+                                                {subStep.NotSure === 0 ? <QuestionMarkIcon sx={{  color: "grey" }} disabled/> : <QuestionMarkIcon sx={{  color: "blue" }} />}
                                             </StyledTableCell>
                                             <StyledTableCell align="right">
-                                                {subStep.NotSure === 0 ? <QuestionMarkIcon disabled/> : <QuestionMarkIcon />}
+                                                {subStep.Done === 0 ? <DoneIcon sx={{  color: "grey" }}  disabled/> : <DoneIcon sx={{  color: "green" }}/>}
                                             </StyledTableCell>
                                             <StyledTableCell align="right">
-                                                {subStep.Error === 0 ? <ErrorOutlineIcon disabled/> : <ErrorOutlineIcon />}
+                                                {subStep.Error === 0 ? <ErrorOutlineIcon sx={{  color: "grey" }} disabled/> : <ErrorOutlineIcon sx={{  color: "red" }} />}
                                             </StyledTableCell>
                                         </StyledTableRow>
                                     ))}
