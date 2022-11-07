@@ -80,6 +80,11 @@ h1 {
   flex-wrap: wrap;
 }
 
+.recipeContainer {
+  width: 50%;
+}
+
+
 .stepDetails {
   width: 50%;
 }

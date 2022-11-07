@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import List from '@mui/material/List';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemText from '@mui/material/ListItemText';
@@ -42,14 +42,18 @@ const StyledTableRow = styled(TableRow)(({ theme }) => ({
 
 const StepCard = ({step}) => {
 
-    const [open, setOpen] = React.useState(true);
-    const [subSteps, setSubSteps] = useState(step.SubSteps);
+    const [open, setOpen] = useState(true);
+   // const [subSteps, setSubSteps] = useState(step.SubSteps);
 
     const handleClick = () => {
         setOpen(!open);
     };
 
-    // console.log(step.SubSteps)
+    // useEffect(() => {
+    //     // console.log("new step")
+    //     // console.log(step)
+    // },[step])
+    // // console.log(step.SubSteps)
 
     return (
         <div className="step">
@@ -75,7 +79,7 @@ const StepCard = ({step}) => {
                                     </TableRow>
                                 </TableHead>
                                 <TableBody>
-                                    {subSteps.map((subStep) => (
+                                    {step?.SubSteps.map((subStep) => (
                                         <StyledTableRow key={subStep.Title}>
                                             <StyledTableCell component="th" scope="row">
                                                 {subStep.Title}
