@@ -1,0 +1,42 @@
+-----------------------------------------------------------------------------------------------------
+INSTRUCTIONS
+-----------------------------------------------------------------------------------------------------
+
+1. Pysever [Server recieves messages from ptgclient and sends it to all other clients (ReactClient as well)]
+2. Pyclient [Sends messages from ptg application to server]
+3. React client [Receives messages from server and updates the HTML DOM using react]
+
+
+-----------------------------------------------------------------------------------------------------
+RUNNING THE REACT FRONTEND APPLICATION
+-----------------------------------------------------------------------------------------------------
+
+1. Fetch latest code from GitHub
+
+git clone -b integration https://github.com/rohithpeddi/ptgdemo.git
+
+2. Instructions for running the service
+
+    a. docker-compose up -d --build
+        [Starts the container and you can access the application at localhost:3000]
+    b. docker ps -a
+        [To check active containers and their IDs]
+    c. docker rm CONTAINER_ID
+        [Removes created container]
+
+-----------------------------------------------------------------------------------------------------
+RUNNING THE PYSERVER
+-----------------------------------------------------------------------------------------------------
+
+1. Open a Terminal and run the pyserver.py file
+    [This starts a python server with port 8000 dedicated for messages]
+
+
+-----------------------------------------------------------------------------------------------------
+CONFIGURING THE PYCLIENT
+-----------------------------------------------------------------------------------------------------
+
+1. Copy the pyclient.py in your ptg codebase
+2. See the check_dummy() method for instructions on how to initialize and send messages
+
+
